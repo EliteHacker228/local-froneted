@@ -26,7 +26,8 @@ class FileUpload extends Component {
             redirect: 'follow'
         };
 
-        fetch(`https://normative-control-api.herokuapp.com/document/${id}/status?access-key=${state['accessKey']}`, requestOptions)
+        // fetch(`https://normative-control-api.herokuapp.com/document/${id}/status?access-key=${state['accessKey']}`, requestOptions)
+        fetch(`https://localhost:8080/document/${id}/status?access-key=${state['accessKey']}`, requestOptions)
             .then(response => {
                 return response.text();
             })

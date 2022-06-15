@@ -39,8 +39,8 @@ const Header = () => {
                 {/*    />*/}
                 {/*</NavLink>*/}
 
-                {/*<a href="http://localhost:3000/">*/}
-                <a href="https://normative-control.herokuapp.com/">
+                <a href="http://localhost:3000/">
+                {/*<a href="https://normative-control.herokuapp.com/">*/}
                     <img className={css.logo}
                          src={logo}
                          title="На главную"
@@ -52,8 +52,8 @@ const Header = () => {
                 {/*    <p className={css.name}>normative<br/>control</p>*/}
                 {/*</NavLink>*/}
 
-                {/*<a href="http://localhost:3000/" className={css.linkname} title="На главную">*/}
-                <a href="https://normative-control.herokuapp.com/" className={css.linkname} title="На главную">
+                <a href="http://localhost:3000/" className={css.linkname} title="На главную">
+                {/*<a href="https://normative-control.herokuapp.com/" className={css.linkname} title="На главную">*/}
                     <p className={css.name}>normative<br/>control</p>
                 </a>
 
@@ -63,8 +63,8 @@ const Header = () => {
                 {/*    <p className={css.faq}>FAQ</p>*/}
                 {/*</NavLink>*/}
 
-                {/*<a href="http://localhost:3000/faq" className={css.linkfaq}>*/}
-                <a href="https://normative-control.herokuapp.com/faq" className={css.linkfaq}>
+                <a href="http://localhost:3000/faq" className={css.linkfaq}>
+                {/*<a href="https://normative-control.herokuapp.com/faq" className={css.linkfaq}>*/}
                     <p className={css.faq}>FAQ</p>
                 </a>
 

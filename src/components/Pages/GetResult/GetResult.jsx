@@ -133,7 +133,8 @@ class GetResult extends Component {
             redirect: 'follow'
         };
 
-        fetch(`https://normative-control-api.herokuapp.com/document/${state['documentId']}/mistakes?access-key=${state['accessKey']}`, requestOptions)
+        // fetch(`https://normative-control-api.herokuapp.com/document/${state['documentId']}/mistakes?access-key=${state['accessKey']}`, requestOptions)
+        fetch(`https://localhost:8080/document/${state['documentId']}/mistakes?access-key=${state['accessKey']}`, requestOptions)
             .then(response => response.text())
             .then(result => {
                 state['checkResult'] = JSON.parse(result);
@@ -145,7 +146,8 @@ class GetResult extends Component {
     };
 
     downloadResult = () => {
-        document.getElementById('downloader').src = `https://normative-control-api.herokuapp.com/document/${state['documentId']}/raw-file?access-key=${state['accessKey']}`;
+        // document.getElementById('downloader').src = `https://normative-control-api.herokuapp.com/document/${state['documentId']}/raw-file?access-key=${state['accessKey']}`;
+        document.getElementById('downloader').src = `https://localhost:8080/document/${state['documentId']}/raw-file?access-key=${state['accessKey']}`;
     };
 
     componentDidMount() {
@@ -270,7 +272,7 @@ class GetResult extends Component {
     render() {
 
 
-        let url = `https://docs.google.com/gview?url=https://normative-control-api.herokuapp.com/document/${state['documentId']}/raw-file?access-key=${state['accessKey']}&embedded=true`;
+        // let url = `https://docs.google.com/gview?url=https://normative-control-api.herokuapp.com/document/${state['documentId']}/raw-file?access-key=${state['accessKey']}&embedded=true`;
         // let url = `https://view.officeapps.live.com/op/embed.aspx?src=https://normative-control-api.herokuapp.com/document/1bc7aa15d7d84912b8a246efceec5123/raw-file?access-key=DAvapNGQVoIuYQsnpzxhvOn9BXbjvQLjgisQdo1IdnU4rBctrWfe52aMablY8YQHSDjQ2xzpj6rYudcAk559Hz6ovDpyQb7RRnWfeBy8eIrlHxbupzalx9LfQJE51jlH`;
 
         return (
@@ -311,9 +313,7 @@ class GetResult extends Component {
                 {/*<div className={css.statistics} id="errors_list" style={{display: 'none'}}>*/}
                 {/*<div className={css.statistics} id="errors_list" style={{height: '0px', display: 'none'}}>*/}
                 <div className={css.statistics} id="errors_list" style={{height: '0px'}}>
-                    <p className={css.errors}>{'}'}</p>
                     <RenderList elements={state['errors']}/>
-                    <p className={css.errors}>{'{'}</p>
                 </div>
                 <div id="holder" style={{height: '58vh', transition: '0.5s all'}}>
                 </div>

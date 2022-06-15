@@ -70,7 +70,8 @@ class Welcome extends Component {
             redirect: 'follow'
         };
 
-        fetch(`https://normative-control-api.herokuapp.com/document/${id}/status?access-key=${this.state['accessKey']}`, requestOptions)
+        // fetch(`https://normative-control-api.herokuapp.com/document/${id}/status?access-key=${this.state['accessKey']}`, requestOptions)
+        fetch(`https://localhost:8080/document/${id}/status?access-key=${this.state['accessKey']}`, requestOptions)
             .then(response => {
                 return response.text();
             })
@@ -95,7 +96,8 @@ class Welcome extends Component {
             redirect: 'follow'
         };
 
-        let response = await fetch(`https://normative-control-api.herokuapp.com/queue/reserve?access-key=${this.state['accessKey']}`, requestOptions);
+        // let response = await fetch(`https://normative-control-api.herokuapp.com/queue/reserve?access-key=${this.state['accessKey']}`, requestOptions);
+        let response = await fetch(`https://localhost:8080/queue/reserve?access-key=${this.state['accessKey']}`, requestOptions);
         let document = await response.json();
         this.state['documentId'] = document['document-id'];
     };
@@ -138,7 +140,8 @@ class Welcome extends Component {
             redirect: 'follow'
         };
 
-        fetch(`https://normative-control-api.herokuapp.com/queue/enqueue`, requestOptions)
+        // fetch(`https://normative-control-api.herokuapp.com/queue/enqueue`, requestOptions)
+        fetch(`https://localhost:8080/queue/enqueue`, requestOptions)
             .then(response => {
                 let status = response['status'];
                 if (status === 202) {
